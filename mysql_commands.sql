@@ -40,6 +40,15 @@ VALUES (
  "Ag",
 );
 ---------------------------------------
+INSERT INTO classrooms (number,
+                        seats_count,
+                        location)
+VALUES (
+ "10",
+ "30",
+ "2. Budova"
+);
+---------------------------------------
 SELECT * FROM students
 WHERE birthdate >= "2000-01-01"
 ---------------------------------------
@@ -51,3 +60,9 @@ CREATE TABLE tablename (
   birthdate date
 );
 ---------------------------------------
+CREATE TABLE classrooms (
+id_classroom int Auto_Increment,
+number varchar(255),
+seats_count int,
+location varchar(255)
+);
