@@ -53,9 +53,20 @@ VALUES (
  "2. Budova"
 );
 ---------------------------------------
-Vypočítání všech dostupných sedacích míst. 
-SELECT SUM(seats_count) 
-FROM classrooms; 
+Vypočítání všech dostupných sedacích míst na každé budově zvlášť. 
+SELECT SUM(seats_count) AS pocet_mist
+FROM classrooms
+GROUP BY location;
+---------------------------------------
+Vypočítání kolik má daný učitel celkem předmětů
+SELECT guarantor, COUNT(*) AS Celkem_predmetu
+FROM subjects
+GROUP BY guarantor;
+---------------------------------------
+Vybrání předmětu podle abecedy
+SELECT *
+FROM subjects
+ORDER BY name ASC(vzestupně)/DESC(Sestupně ;
 ---------------------------------------
 Kdyz se zmeni ucitel
 UPDATE subjects
