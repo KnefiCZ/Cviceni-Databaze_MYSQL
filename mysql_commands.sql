@@ -30,7 +30,7 @@ VALUES (
  "učitel DB."
 );
 ---------------------------------------
-INSERT INTO teachers (id_subject,
+INSERT INTO subjects (id_subject,
                       name,
                       description,
                       shortcut)
@@ -61,7 +61,7 @@ CREATE TABLE tablename (
 );
 ---------------------------------------
 CREATE TABLE classrooms (
-id_classroom int Auto_Increment,
+id_classroom int AUTO_INCREMENT,
 number varchar(255),
 seats_count int,
 location varchar(255)
