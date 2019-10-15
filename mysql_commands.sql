@@ -53,6 +53,10 @@ VALUES (
  "2. Budova"
 );
 ---------------------------------------
+Vypočítání všech dostupných sedacích míst. 
+SELECT SUM(seats_count) 
+FROM classrooms; 
+---------------------------------------
 Kdyz se zmeni ucitel
 UPDATE subjects
 SET id_gurantor = 4
