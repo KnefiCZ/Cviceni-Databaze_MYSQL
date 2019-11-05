@@ -94,3 +94,127 @@ number varchar(255),
 seats_count int,
 location varchar(255)
 );
+---------------------------------------
+CREATE TABLE schedule(
+id_schedule int(11) NOT NULL AUTO_INCREMENT,
+id_teacher int(11) NOT NULL,
+id_class int(11) NOT NULL,
+id_classroom int(11) NOT NULL,
+id_subject int(11) NOT NULL,
+id_lesson int(11) NOT NULL,
+description TEXT,
+
+PRIMARY KEY (id_schedule)
+);
+---------------------------------------
+CREATE TABLE lessons (id_lesson int(11) NOT NULL AUTO_INCREMENT,
+                      position int(11) NOT NULL,
+                      start_time TIME(0) NOT NULL,
+                      end_time TIME(0) NOT NULL,
+                      PRIMARY KEY (id_lesson)
+); 
+ 
+
+-- VKLÁDÁNÍ HODIN DO LESSONS --
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+1,
+"7:50",
+"8:35"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+2,
+"8:45",
+"9:30"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+3,
+"9:40",
+"10:25"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+4,
+"10:45",
+"11:30"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+5,
+"11:40",
+"12:25"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+6,
+"12:55",
+"13:40"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+7,
+"13:50",
+"14:35"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+8,
+"14:45",
+"15:30"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+9,
+"15:35",
+"16:20"
+);
+
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+10,
+"16:25",
+"17:10"
+);
+  
+
+
