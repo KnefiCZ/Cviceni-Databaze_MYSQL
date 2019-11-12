@@ -53,6 +53,24 @@ VALUES (
  "2. Budova"
 );
 ---------------------------------------
+Informace pro tabulku pro rozvrh
+INSERT INTO schedule(
+id_teacher,
+id_subject,
+id_lesson,
+id_classroom,
+id_class,
+description)
+
+VALUES (
+1,
+5,
+5,
+1,
+3,
+"Toto je hodina Značkovacích jazyků"
+);
+---------------------------------------
 Vypočítání všech dostupných sedacích míst na každé budově zvlášť. 
 SELECT SUM(seats_count) AS pocet_mist
 FROM classrooms
@@ -113,9 +131,28 @@ CREATE TABLE lessons (id_lesson int(11) NOT NULL AUTO_INCREMENT,
                       end_time TIME(0) NOT NULL,
                       PRIMARY KEY (id_lesson)
 ); 
- 
+---------------------------------------
+Propojení tabulek
+SELECT * 
+FROM schedule sch
+JOIN teachers t ON sch.id_teacher = t.id_teacher
+JOIN classes cls ON sch.id_class = cls.id_class
+JOIN classroom clsr ON sch.id_classroom = clsr.id_classroom
+JOIN subject su ON sch.id_subject = su.id_subject
+JOIN lesson le ON sch.id_lesson = le.id_lesson
 
+---------------------------------------
 -- VKLÁDÁNÍ HODIN DO LESSONS --
+INSERT INTO lessons (
+                      position,
+                      start_time,
+                      end_time)
+VALUES (
+0,
+"7:00",
+"7:45"
+);
+
 INSERT INTO lessons (
                       position,
                       start_time,
@@ -215,6 +252,3 @@ VALUES (
 "16:25",
 "17:10"
 );
-  
-
-
