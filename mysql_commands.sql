@@ -140,7 +140,17 @@ JOIN classes cls ON sch.id_class = cls.id_class
 JOIN classroom clsr ON sch.id_classroom = clsr.id_classroom
 JOIN subject su ON sch.id_subject = su.id_subject
 JOIN lesson le ON sch.id_lesson = le.id_lesson
-
+---------------------------------------
+Konečné propojení tabulek
+#      2019-01-01                2                                    Da                   Lenka Sklenářová            19
+SELECT  sch.date AS datum, le.position AS Vyučovcí_hodina, su.shortcut AS Předmět,  t.firstname, t.lastname, clsr.number AS Místnost
+FROM schedule sch
+JOIN teachers t ON sch.id_teacher = t.id_teacher
+JOIN classes cls ON sch.id_class = cls.id_class
+JOIN classrooms clsr ON sch.id_classroom = clsr.id_classroom
+JOIN subjects su ON sch.id_subject = su.id_subjects
+JOIN lessons le ON sch.id_lesson = le.id_lesson
+;
 ---------------------------------------
 -- VKLÁDÁNÍ HODIN DO LESSONS --
 INSERT INTO lessons (
