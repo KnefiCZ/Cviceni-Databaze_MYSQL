@@ -142,7 +142,7 @@ JOIN subject su ON sch.id_subject = su.id_subject
 JOIN lesson le ON sch.id_lesson = le.id_lesson
 ---------------------------------------
 Konečné propojení tabulek
-#      2019-01-01                2                                    Da                   Lenka Sklenářová            19
+--     2019-01-01                2                                    Da                   Lenka Sklenářová            19
 SELECT  sch.date AS datum, le.position AS Vyučovcí_hodina, su.shortcut AS Předmět,  t.firstname, t.lastname, clsr.number AS Místnost
 FROM schedule sch
 JOIN teachers t ON sch.id_teacher = t.id_teacher
@@ -262,3 +262,7 @@ VALUES (
 "16:25",
 "17:10"
 );
+
+---------------------------------------
+-- DATABÁZE BOOKS --
+ https://drive.google.com/file/d/1IwWHDiDUOesdDT-vh49g-UqkBUh5yWEx/view?usp=sharing
