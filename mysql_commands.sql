@@ -266,3 +266,46 @@ VALUES (
 ---------------------------------------
 -- DATABÁZE BOOKS --
 -- https://drive.google.com/file/d/1IwWHDiDUOesdDT-vh49g-UqkBUh5yWEx/view?usp=sharing
+
+BOOOKS :D:D POK POKS
+
+
+CREATE TABLE authors(
+id_author int(11) NOT NULL AUTO_INCREMENT,
+firstname varchar(255) NOT NULL,
+lastname varchar(255) NOT NULL,
+birthdate int(11) NOT NULL,
+date_of_death int(255) NOT NULL,
+description TEXT,
+
+PRIMARY KEY (id_author)
+);
+---------------------------------------
+CREATE TABLE books(
+id_book int(11) NOT NULL AUTO_INCREMENT,
+id_author int(11) NOT NULL,
+id_publisher int(11) NOT NULL,
+id_gendre int(11) NOT NULL,
+title varchar(255) NOT NULL,
+year int(255) NOT NULL,
+description TEXT,
+
+PRIMARY KEY (id_book)
+);
+---------------------------------------
+CREATE TABLE publishers(
+id_publisher int(11) NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+description TEXT,
+
+PRIMARY KEY (id_publisher)
+);
+---------------------------------------
+CREATE TABLE genres(
+id_genre int(11) NOT NULL AUTO_INCREMENT,
+name varchar(255) NOT NULL,
+description TEXT,
+
+PRIMARY KEY (id_genre)
+);
+---------------------------------------
