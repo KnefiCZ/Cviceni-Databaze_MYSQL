@@ -309,3 +309,20 @@ description TEXT,
 PRIMARY KEY (id_genre)
 );
 ---------------------------------------
+
+
+INSERT INTO books (
+                      id_author,
+                      id_publisher,
+                      id_gendre,	
+                      title,
+                      year,
+                      description)
+VALUES (
+2,
+2,
+2,
+"Jméno větru",
+"2017-01-01",
+"Toto vydání obsahuje kompletní román, který byl dříve vydán v rozdělení na díl první a druhý."
+);
