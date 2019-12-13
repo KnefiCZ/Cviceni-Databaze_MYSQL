@@ -326,3 +326,12 @@ VALUES (
 "2017-01-01",
 "Toto vydání obsahuje kompletní román, který byl dříve vydán v rozdělení na díl první a druhý."
 );
+
+--PROPOJOVÁNÍ KNIHOVNY
+SELECT boo.id_book AS "Číslo knihy", boo.title AS "Titul", CONCAT(a.firstname, " ", a.lastname) AS "Jméno a Příjmení" , pub.name AS "Vydavatel", gen.name AS "Žánr"
+FROM books boo
+JOIN authors a ON boo.id_author = a.id_author
+JOIN genres gen ON boo.id_gendre = gen.id_genre
+JOIN publishers pub ON boo.id_publisher = pub.id_publisher
+
+;
