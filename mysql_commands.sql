@@ -112,3 +112,46 @@ INSERT INTO classes (
 name)
 VALUES (
 "Human");
+
+-- B E A S T _ R E S T A U R A N T --
+
+CREATE TABLE products (
+id_product int(11) NOT NULL PRIMARY KEY, 
+name varchar(255),
+price int(11),
+description text,
+id_type int(11)
+);
+
+CREATE TABLE Orders (
+id_order int(11) NOT NULL PRIMARY KEY, 
+created_at datetime,
+id_user int(11)
+);
+
+CREATE TABLE Users (
+id_user int(11) NOT NULL PRIMARY KEY, 
+email varchar(255),
+password varchar(255),
+firstname varchar(255),
+lastname varchar(255),
+address varchar(255),
+city varchar(255)
+);
+
+CREATE TABLE Type (
+id_type int(11) NOT NULL PRIMARY KEY, 
+name varchar(255),
+description text
+);
+
+CREATE TABLE orders_products (
+id_orders int(11) NOT NULL PRIMARY KEY, 
+description text
+);
+
+CREATE TABLE Payment_method(
+id_payment int(11) NOT NULL PRIMARY KEY, 
+name varchar(255),
+description text
+);
