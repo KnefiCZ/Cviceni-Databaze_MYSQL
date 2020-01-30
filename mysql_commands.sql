@@ -113,6 +113,27 @@ name)
 VALUES (
 "Human");
 
+----------------------------------------
+------------SELECTY---------------------
+----------------------------------------
+
+SELECT g.id_guild AS "ID guildy", p.id_player AS "ID hráče", g.name AS "Jméno", g.created_at AS "Vytvořeno v:", p.nickname AS "Jmého hráče"
+FROM guilds g
+JOIN players p ON g.id_guild = p.id_guild;
+
+SELECT g.name, COUNT(*) AS "počet hráčů v guildě"
+FROM players p
+JOIN guilds g ON p.id_guild = g.id_guild
+GROUP BY g.id_guild
+
+--
+
+SELECT p.nickname AS "Přezdívka hráče", ch.name AS "Jméno hrdiny", ch.level AS "Level hrdiny", c.name AS "Třída"
+FROM characters ch
+JOIN players p ON p.id_player = ch.id_player
+JOIN classes c ON c.id_class = ch.id_player;
+
+
 -- B E A S T _ R E S T A U R A N T --
 
 CREATE TABLE products (
