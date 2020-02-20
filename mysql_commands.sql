@@ -133,6 +133,11 @@ FROM characters ch
 JOIN players p ON p.id_player = ch.id_player
 JOIN classes c ON c.id_class = ch.id_player;
 
+--
+
+SELECT COALESCE(g.id_guild, "Nevyplněno") AS "ID guildy", p.id_player AS "ID hráče", g.name AS "Jméno", g.created_at AS "Vytvořeno v:", p.nickname AS "Jmého hráče"
+FROM guilds g
+RIGHT JOIN players p ON g.id_guild = p.id_guild;
 
 -- B E A S T _ R E S T A U R A N T --
 
