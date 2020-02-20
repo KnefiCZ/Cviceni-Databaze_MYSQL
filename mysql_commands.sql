@@ -139,6 +139,18 @@ SELECT COALESCE(g.id_guild, "Nevyplněno") AS "ID guildy", p.id_player AS "ID hr
 FROM guilds g
 RIGHT JOIN players p ON g.id_guild = p.id_guild;
 
+----------------------------------------
+------------MAZANI----------------------
+----------------------------------------
+
+SELECT * FROM players
+ORDER BY id_player;
+
+DELETE FROM players
+WHERE id_guild = 2;
+--
+
+
 -- B E A S T _ R E S T A U R A N T --
 
 CREATE TABLE products (
