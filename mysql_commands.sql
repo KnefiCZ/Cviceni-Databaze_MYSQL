@@ -139,16 +139,40 @@ SELECT COALESCE(g.id_guild, "Nevyplněno") AS "ID guildy", p.id_player AS "ID hr
 FROM guilds g
 RIGHT JOIN players p ON g.id_guild = p.id_guild;
 
+--
+
+SELECT u.id_unit AS "ID jednotky", u.HP AS "Životy jednotky", u.DMG AS "Poškození jednotky",  u_t.name AS "Název jednotky", ch.name AS "Jménu charakteru"
+FROM units u
+JOIN units_types u_t ON u.id_unit_type = u_t.id_unit_type
+JOIN characters ch ON ch.id_character = u.id_character;
+--
+
+SELECT u_t.name AS "Název jednotky", ch.name AS "Jménu charakteru", cl.name AS "Třída chatakteru", p.nickname AS "Přezdívka hráče", g.name AS "Jméno guildy"
+FROM units u
+JOIN units_types u_t ON u.id_unit_type = u_t.id_unit_type
+JOIN characters ch ON ch.id_character = u.id_character
+JOIN classes cl ON cl.id_class = ch.id_class
+JOIN players p ON p.id_player = ch.id_player
+JOIN guilds g ON g.id_guild = p.id_guild
+
+
+
 ----------------------------------------
 ------------MAZANI----------------------
 ----------------------------------------
 
 SELECT * FROM players
 ORDER BY id_player;
-
+--MAZANI Z TABULKY
 DELETE FROM players
 WHERE id_guild = 2;
 --
+--MAZANI CELE TABULKY
+DROP TABLE test;
+--
+--MAZANI DAT Z CELE TABULKY
+
+
 
 
 -- B E A S T _ R E S T A U R A N T --
