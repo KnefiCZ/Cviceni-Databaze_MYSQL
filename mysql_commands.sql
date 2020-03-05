@@ -154,6 +154,16 @@ JOIN characters ch ON ch.id_character = u.id_character
 JOIN classes cl ON cl.id_class = ch.id_class
 JOIN players p ON p.id_player = ch.id_player
 JOIN guilds g ON g.id_guild = p.id_guild
+--
+
+SELECT u_t.name AS "Název jednotky",  COALESCE(u.id_character, "Nevyplněno") AS "Jméno charakteru", ch.name AS "Jménu charakteru", cl.name AS "Třída chatakteru", p.nickname AS "Přezdívka hráče", g.name AS "Jméno guildy"
+FROM units u
+JOIN units_types u_t ON u.id_unit_type = u_t.id_unit_type
+LEFT JOIN characters ch ON ch.id_character = u.id_character
+LEFT JOIN players p ON p.id_player = ch.id_player
+LEFT JOIN classes cl ON cl.id_class = ch.id_class
+LEFT JOIN guilds g ON g.id_guild = p.id_guild
+
 
 
 
